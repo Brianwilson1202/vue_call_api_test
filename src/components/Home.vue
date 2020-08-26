@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h3>Select Our Cool Beer!</h3>
+    <h3>Please select Our Cool Beer!</h3>
     <table class="table">
       <thead>
         <tr>
