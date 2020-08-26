@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h2>Welcome to Our Market!</h2>
+    <h2>Welcome to My Beer Market!</h2>
     <span> Cart </span>
     <button type="button" class="btn btn-info">{{store.count}}</button>
   </div>
