@@ -4,12 +4,12 @@
     <div class="detail">
       <div class="description">
         <ul v-for="detail in store.details" v-bind:key="detail.id">
-          <li>Name: {{detail.name}}</li>
-          <li>First Brewed: {{detail.first_brewed}}</li>
-          <li>Description: {{detail.description}}</li>
-          <li>Yeast: {{detail.ingredients.yeast}}</li>
-          <li>Brewer Tips: {{detail.brewers_tips}}</li>
-          <li>Contributed By: {{detail.contributed_by}}</li>
+          <li><span class="description-title" >Name: </span>{{detail.name}}</li>
+          <li><span class="description-title" >First Brewed: </span>{{detail.first_brewed}}</li>
+          <li><span class="description-title" >Description: </span>{{detail.description}}</li>
+          <li><span class="description-title" >Yeast: </span>{{detail.ingredients.yeast}}</li>
+          <li><span class="description-title" >Brewer Tips: </span>{{detail.brewers_tips}}</li>
+          <li><span class="description-title" >Contributed By: </span>{{detail.contributed_by}}</li>
         </ul>
       </div>
       <div class="image">
@@ -80,5 +80,8 @@ ul {
 }
 .clearbox {
   clear: both;
+}
+.description-title {
+  font-weight: bold;
 }
 </style>

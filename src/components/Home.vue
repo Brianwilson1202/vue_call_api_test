@@ -11,17 +11,17 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="user in users" v-bind:key="user.id">
-          <th scope="row">{{user.id}}</th>
-          <td>{{user.name}}</td>
+        <tr v-for="beer in beers" v-bind:key="beer.id">
+          <th scope="row">{{beer.id}}</th>
+          <td class="home-beer-name" >{{beer.name}}</td>
           <td>
-            <img v-bind:src="user.image_url" class="img-fluid" alt="Responsive image" />
+            <img v-bind:src="beer.image_url" class="img-fluid" alt="Responsive image" />
           </td>
           <td>
             <router-link
               to="/detail"
               class="btn btn-primary detail"
-              v-on:click.native="setDetail(user.id)"
+              v-on:click.native="setDetail(beer.id)"
             >Detail</router-link>
             <br />
             <button type="button" class="btn btn-warning add-cart" @click.prevent="addToCart">Add to cart</button>
@@ -42,7 +42,7 @@ export default {
 
   data() {
     return {
-      users: null,
+      beers: null,
       count: 0
     };
   },
@@ -51,7 +51,7 @@ export default {
     axios
       .get("https://api.punkapi.com/v2/beers?page=1&per_page=10")
       .then(res => {
-        this.users = res.data;
+        this.beers = res.data;
       });
   },
 
@@ -85,5 +85,9 @@ export default {
 .detail {
   margin-bottom: 10px;
   margin-top: 30px;
+}
+.home-beer-name {
+  font-size: 1.5rem;
+  /* font-weight: bold; */
 }
 </style>
